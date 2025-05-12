@@ -1,0 +1,121 @@
+<<<<<<< HEAD
+---
+import { SERVICE } from "@/config/Sections";
+import SECTION from "../ui/SECTION.astro";
+import { getCollection } from "astro:content";
+import { ChevronsLeftRightEllipsis } from "@lucide/astro";
+interface Subtask {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+const services = await getCollection("services");
+---
+
+<SECTION
+  title={SERVICE.title}
+  description={SERVICE.description}
+  aria-label={SERVICE.arialable}
+  id={SERVICE.baseURL}
+>
+  <div class="space-y-8">
+    {
+      services.map((service) => (
+        <article class="flex flex-col-reverse md:flex-row items-center md:items-start gap-10">
+          <div class="w-full md:w-1/2">
+            <div class="p-4">
+              <h2 class="text-2xl md:text3xl font-bold bg-gradient-to-t from-brand from-50% to-transparent to-50% inline">
+                {service.data.title}
+              </h2>
+              {/* <p class="mt-1 text-sm text-black-40">{service.data.description}</p> */}
+            </div>
+            <div class="divide-y divide-black-40">
+              {service.data.subtasks?.map((subtask: Subtask) => (
+                <div class="p-4">
+                  <div class="flex items-start gap-3">
+                    {subtask.icon && <i class={`bg-brand p-2 rounded-md fi fi-rr-${subtask.icon}`} />}
+
+                    <div>
+                      <h3 class="font-semibold mb-2">{subtask.title}</h3>
+                      <p class="mt-1 text-sm text-black-40">{subtask.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="w-full flex md:w-1/2 justify-center items-center">
+            <img
+              src={service.data.image}
+              alt={service.data.title}
+              title={service.data.title}
+              class="w-3/4 h-auto"
+            />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</SECTION>
+=======
+---
+import { SERVICE } from "@/config/Sections";
+import SECTION from "../ui/SECTION.astro";
+import { getCollection } from "astro:content";
+import { ChevronsLeftRightEllipsis } from "@lucide/astro";
+interface Subtask {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+const services = await getCollection("services");
+---
+
+<SECTION
+  title={SERVICE.title}
+  description={SERVICE.description}
+  aria-label={SERVICE.arialable}
+  id={SERVICE.baseURL}
+>
+  <div class="space-y-8">
+    {
+      services.map((service) => (
+        <article class="flex flex-col-reverse md:flex-row items-center md:items-start gap-10">
+          <div class="w-full md:w-1/2">
+            <div class="p-4">
+              <h2 class="text-2xl md:text3xl font-bold bg-gradient-to-t from-brand from-50% to-transparent to-50% inline">
+                {service.data.title}
+              </h2>
+              {/* <p class="mt-1 text-sm text-black-40">{service.data.description}</p> */}
+            </div>
+            <div class="divide-y divide-black-40">
+              {service.data.subtasks?.map((subtask: Subtask) => (
+                <div class="p-4">
+                  <div class="flex items-start gap-3">
+                    {subtask.icon && <i class={`bg-brand p-2 rounded-md fi fi-rr-${subtask.icon}`} />}
+
+                    <div>
+                      <h3 class="font-semibold mb-2">{subtask.title}</h3>
+                      <p class="mt-1 text-sm text-black-40">{subtask.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="w-full flex md:w-1/2 justify-center items-center">
+            <img
+              src={service.data.image}
+              alt={service.data.title}
+              title={service.data.title}
+              class="w-3/4 h-auto"
+            />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</SECTION>
+>>>>>>> origin/main

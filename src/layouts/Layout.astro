@@ -1,0 +1,35 @@
+---
+import "@/styles/global.css";
+import Footer from "@/components/astro/Footer.astro";
+import Header from "@/components/astro/Header.astro";
+<<<<<<< HEAD
+=======
+import Main from "@/components/ui/Main.astro";
+>>>>>>> origin/main
+
+import { SITE } from "@/config/const";
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl" class="h-full min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SITE.title}</title>
+  </head>
+  <body>
+<<<<<<< HEAD
+    <!-- <Header /> -->
+     
+    
+=======
+    <Header />
+    <Main>
+>>>>>>> origin/main
+      <slot />
+    </Main>
+    <Footer />
+  </body>
+</html>

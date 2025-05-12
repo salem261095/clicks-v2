@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+---
+import H2 from "./H2.astro";
+const { title, arialable, link, description, className } = Astro.props;
+---
+
+<section
+  class={`flex flex-col items-center my-4 md:my-8 ${className || ""}`}
+  arai-lable={arialable}
+  id={link}
+>
+  <div class="mx-auto max-w-2xl">
+    <H2 text={title} />
+    <p class="mt-6 text-lg/8">{description}</p>
+  </div>
+  <slot />
+</section>
+=======
+---
+import H2 from "./H2.astro";
+const { title, arialable, link, description, className } = Astro.props;
+---
+
+<section
+  class={`flex flex-col items-center my-4 md:my-8 ${className || ""}`}
+  arai-lable={arialable}
+  id={link}
+>
+  <div class="mx-auto max-w-2xl">
+    <H2 text={title} />
+    <p class="mt-6 text-lg/8">{description}</p>
+  </div>
+  <slot />
+</section>
+>>>>>>> origin/main

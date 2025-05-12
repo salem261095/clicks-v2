@@ -1,0 +1,331 @@
+<<<<<<< HEAD
+@import "tailwindcss";
+
+@theme {
+    --font-dga: "DGAgnadeen", "sans-serif";
+
+    --color-*: initial;
+    --color-brand: oklch(90.5% 0.182 98.111);
+    --color-brand-hover: oklch(79.5% 0.184 86.047);
+    --color-real-brand: #FEF201;
+    --color-black: oklch(14.7% 0.004 49.25);
+    --color-black-20: oklch(21.6% 0.006 56.043);
+    --color-black-40: oklch(37.4% 0.01 67.558);
+
+    --color-white: oklch(97% 0.001 106.424);
+    --color-white-10: oklch(98.5% 0.001 106.423);
+    --color-white-20: oklch(86.9% 0.005 56.366);
+    --color-white-40: oklch(55.3% 0.013 58.071);
+
+    --color-whatsapp: oklch(0.7806 0.203 142.49);
+}
+
+@import '@flaticon/flaticon-uicons/css/regular/rounded.css';
+@import "@flaticon/flaticon-uicons/css/brands/all";
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Ultralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "DGAgnadeen", "Sans";
+
+}
+
+#HeroSection {
+    background-image: url("/images/HeroDesktop.avif");
+    background-position: center center;
+    object-fit: cover;
+}
+
+/*MenuToggler*/
+.hamburger {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 20px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    right: 0;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 8px;
+    width: 60%;
+}
+
+.hamburger span:nth-child(3) {
+    top: 16px;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    width: 100%;
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 100%;
+}
+
+.nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.nav-links.open {
+    max-height: 500px;
+}
+
+/*For Hero Section*/
+.cta-hover-effect {
+    position: relative;
+    overflow: hidden;
+    z-index: 1
+}
+
+.cta-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    z-index: -1
+}
+
+.cta-hover-effect:hover::before {
+    left: 0
+}
+
+.sidebar {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%)
+}
+
+.sidebar-open {
+    transform: translateX(0)
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40
+}
+
+.overlay-active {
+    display: block
+}
+
+header {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+=======
+@import "tailwindcss";
+
+@theme {
+    --font-dga: "DGAgnadeen", "sans-serif";
+
+    --color-*: initial;
+    --color-brand: oklch(90.5% 0.182 98.111);
+    --color-brand-hover: oklch(79.5% 0.184 86.047);
+
+    --color-black: oklch(14.7% 0.004 49.25);
+    --color-black-20: oklch(21.6% 0.006 56.043);
+    --color-black-40: oklch(37.4% 0.01 67.558);
+
+    --color-white: oklch(97% 0.001 106.424);
+    --color-white-10: oklch(98.5% 0.001 106.423);
+    --color-white-20: oklch(86.9% 0.005 56.366);
+    --color-white-40: oklch(55.3% 0.013 58.071);
+
+    --color-whatsapp: oklch(0.7806 0.203 142.49);
+}
+
+@import "@flaticon/flaticon-uicons/css/Regular/Rounded";
+@import "@flaticon/flaticon-uicons/css/brands/all";
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Ultralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DGAgnadeen';
+    src: url('/fonts/DGAgnadeen-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "DGAgnadeen", "Sans";
+
+}
+
+#HeroSection {
+    background-image: url("/images/HeroDesktop.avif");
+    background-position: center center;
+    object-fit: cover;
+}
+
+/*MenuToggler*/
+.hamburger {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 20px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    right: 0;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 8px;
+    width: 60%;
+}
+
+.hamburger span:nth-child(3) {
+    top: 16px;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    width: 100%;
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 100%;
+}
+
+.nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.nav-links.open {
+    max-height: 500px;
+>>>>>>> origin/main
+}

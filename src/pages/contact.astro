@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SEO from "@/components/ui/SEO.astro";
+import ContactForm from "@/components/astro/ContactForm.astro";
+import H1 from "@/components/ui/H1.astro";
+import { SITE } from "@/config/const";
+import Header from "@/components/astro/Header.astro";
+---
+
+<Layout>
+  <SEO
+    title="تواصل معي"
+    description="يمكنك التواصل معي لأي استفسار أو مشروع عبر نموذج الاتصال."
+    url={`${SITE.title}/contact`}
+    image="/assets/og-image.png"
+  />
+  <Header />
+  <ContactForm />
+</Layout>

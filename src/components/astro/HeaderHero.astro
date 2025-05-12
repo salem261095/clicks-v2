@@ -1,0 +1,134 @@
+---
+import { NAVLINKS } from "@/config/const";
+import Image from "astro/components/Image.astro";
+import { Menu, X } from "@lucide/astro";
+import { CONTACTS } from "@/config/const";
+import { siWhatsapp } from "simple-icons/icons";
+import { HeroSection } from "@/config/Sections";
+import Btn from "@/components/ui/Btn.astro";
+---
+
+<div id="overlay" class="overlay"></div>
+
+<header class="fixed border-b-white border-2 w-full z-50 py-3 px-4 md:px-16">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <button id="menuBtn" class="text-white cursor-pointer focus:outline-none">
+      <Menu />
+    </button>
+    <a href="/" class="text-white text-2xl font-bold">
+      <Image
+        src="/logo/YellowCliksLogo.webp"
+        alt="Yellow Cliks Logo"
+        width={200}
+        height={100}
+      /></a
+    >
+    <div class="hidden md:block">
+      <Btn
+        text="اطلب الخدمة الان"
+        href={`https://wa.me/${CONTACTS.whatsapp}`}
+      />
+    </div>
+  </div>
+</header>
+
+<div
+  id="sidebar"
+  class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-lg z-50 p-6"
+>
+  <button
+    id="closeBtn"
+    class="absolute top-4 left-4 text-black-40 focus:outline-none"
+  >
+    <X />
+  </button>
+  <nav class="mt-16">
+    <ul class="space-y-6">
+      {
+        NAVLINKS.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              target={link.external ? "_blank" : "_self"}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              class="relative inline-block group"
+            >
+              <span>{link.text}</span>
+              <span class="absolute inset-x-0 -bottom-2 h-0.5 bg-real-brand transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<section
+  class="relative h-screen w-full flex items-center justify-center bg-gray-900 overflow-hidden mb-4"
+  aria-label={HeroSection.arialable}
+>
+  <div class="absolute inset-0">
+    <img
+      src="/images/HeroDesktop.avif"
+      alt="Background"
+      class="w-full h-full object-cover opacity-100"
+    />
+    <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
+  </div>
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+      {HeroSection.title}
+    </h1>
+    <p class="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto">
+      {HeroSection.description}
+    </p>
+
+    <div class="flex justify-center">
+      <a
+        href={HeroSection.ctaHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-brand hover:bg-brand-hover font-bold text-2xl text-black px-6 py-3 rounded-md flex items-center gap-2 transition duration-200 hover:shadow-lg"
+      >
+        {HeroSection.ctaText}
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d={siWhatsapp.path} fill="currentColor"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn"),
+    closeBtn = document.getElementById("closeBtn"),
+    sidebar = document.getElementById("sidebar"),
+    overlay = document.getElementById("overlay");
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.add("sidebar-open");
+    overlay.classList.add("overlay-active");
+    document.body.style.overflow = "hidden";
+  });
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("sidebar-open");
+    overlay.classList.remove("overlay-active");
+    document.body.style.overflow = "";
+  });
+  overlay.addEventListener("click", () => {
+    sidebar.classList.remove("sidebar-open");
+    overlay.classList.remove("overlay-active");
+    document.body.style.overflow = "";
+  });
+
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("bg-black-20", "shadow-md");
+      header.classList.remove("bg-transparent");
+    } else {
+      header.classList.remove("bg-black-20", "shadow-md");
+      header.classList.add("bg-transparent");
+    }
+  });
+</script>
