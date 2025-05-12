@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 import { SITE } from "@/config/const";
 
@@ -33,39 +32,3 @@ const fullTitle = title ? `${title} - ${AppName}` : AppName;
   <meta property="og:image" content={image} />
   <meta property="og:url" content={url} />
 </head>
-=======
----
-import { SITE } from "@/config/const";
-
-export interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  url?: string;
-}
-
-const AppName = SITE.title;
-const defaultDescription = SITE.description;
-const defaultImage = "/assets/og-image.png";
-const defaultUrl = SITE.baseURL;
-
-const {
-  title = AppName,
-  description = defaultDescription,
-  image = defaultImage,
-  url = defaultUrl,
-} = Astro.props;
-
-const fullTitle = title ? `${title} - ${AppName}` : AppName;
----
-
-<head>
-  <title>{fullTitle}</title>
-  <meta name="description" content={description} />
-  <meta property="og:title" content={fullTitle} />
-  <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content={image} />
-  <meta property="og:url" content={url} />
-</head>
->>>>>>> origin/main

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 import {} from "@lucide/astro";
 import SECTION from "../ui/SECTION.astro";
@@ -43,51 +42,3 @@ const NewClass = "bg-[#FBF7B6] py-10 text-center rounded-lg";
     </dl>
   </div>
 </SECTION>
-=======
----
-import {} from "@lucide/astro";
-import SECTION from "../ui/SECTION.astro";
-import { FeaturesPoint } from "@/config/feature";
-import { FEATURE } from "@/config/Sections";
-const NewClass = "bg-white-10 p-4 rounded-lg";
----
-
-<SECTION
-  title={FEATURE.title}
-  description={FEATURE.description}
-  aria-lable={FEATURE.arialable}
-  link={FEATURE.baseURL}
-  className={NewClass}
->
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-    <div class="mx-auto max-w-2xl sm:max-w-none lg:max-w-5xl">
-      <dl class="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-2">
-        {
-          FeaturesPoint.map((feature) => (
-            <div class="relative group p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-[#fff] border border-gray-100 hover:border-transparent">
-              <div class="absolute -inset-0.5 rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
-              <div class="relative h-full">
-                <dt class="flex flex-col">
-                  {feature.icon && (
-                    <div class="flex items-center mb-4">
-                      <div class="flex items-center justify-center w-12 h-12 rounded-lg text-black-40 bg-white-20 shadow-md">
-                        <i class={`fi fi-rr-${feature.icon}`} />
-                      </div>
-                    </div>
-                  )}
-                  <span class="text-xl font-semibold leading-7 text-gray-900">
-                    {feature.text}
-                  </span>
-                </dt>
-                <dd class="mt-4 text-base leading-6 text-gray-600">
-                  {feature.description}
-                </dd>
-              </div>
-            </div>
-          ))
-        }
-      </dl>
-    </div>
-  </div>
-</SECTION>
->>>>>>> origin/main

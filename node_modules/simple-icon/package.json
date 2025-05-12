@@ -1,0 +1,19 @@
+{
+  "name": "simple-icon",
+  "version": "1.0.1",
+  "description": "lib and CLI for generation icons",
+  "main": "index.js",
+  "bin": {
+    "simple-icon": "./index.js"
+  },
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "keywords": ["icon", "cli", "image"],
+  "author": "Radymyr",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "sharp": "^0.33.5"
+  }
+}

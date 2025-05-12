@@ -1,6 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict",
-<<<<<<< HEAD
   "include": [
     ".astro/types.d.ts",
     "**/*"
@@ -8,16 +7,11 @@
   "exclude": [
     "dist"
   ],
-=======
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
->>>>>>> origin/main
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-<<<<<<< HEAD
       "@/*": [
         "src/*"
       ]
@@ -26,9 +20,3 @@
     "jsxImportSource": "react"
   }
 }
-=======
-      "@/*": ["src/*"]
-    }
-  }
-}
->>>>>>> origin/main

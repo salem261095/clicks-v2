@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-<<<<<<< HEAD
 import react from "@astrojs/react";
 
 export default defineConfig({
@@ -17,13 +16,4 @@ export default defineConfig({
   },
 
   integrations: [react()],
-=======
-export default defineConfig({
-    vite: {
-        plugins: [tailwindcss()],
-        // optimizeDeps: {
-        //     include: ['@flaticon/flaticon-uicons']
-        // }
-    },
->>>>>>> origin/main
 });
